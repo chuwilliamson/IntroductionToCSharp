@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0.IntroToCsharp", "0.IntroToCsharp\0.IntroToCsharp.csproj", "{A789E6DC-CE1D-4874-8903-8B7AB02E84CC}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.CombatForms", "2.CombatForms\2.CombatForms.csproj", "{1B5D94D5-A6B6-483B-85D2-EC46C1E30552}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Interfaces", "3.Interfaces\3.Interfaces.csproj", "{BBDFD880-300E-41B3-8585-8D78F349F3E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.Serialization", "4.Serialization\4.Serialization.csproj", "{532283BC-E1A3-4461-BAEE-03406EFAD98C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "99.Integration", "99.Integration\99.Integration.csproj", "{5DEA767C-28B6-4659-A67C-251461F73D76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +37,19 @@ Global
 		{BBDFD880-300E-41B3-8585-8D78F349F3E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBDFD880-300E-41B3-8585-8D78F349F3E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBDFD880-300E-41B3-8585-8D78F349F3E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{532283BC-E1A3-4461-BAEE-03406EFAD98C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532283BC-E1A3-4461-BAEE-03406EFAD98C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532283BC-E1A3-4461-BAEE-03406EFAD98C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532283BC-E1A3-4461-BAEE-03406EFAD98C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DEA767C-28B6-4659-A67C-251461F73D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DEA767C-28B6-4659-A67C-251461F73D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DEA767C-28B6-4659-A67C-251461F73D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DEA767C-28B6-4659-A67C-251461F73D76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3559B5B8-C494-44CF-BD7F-288D4BEE7017}
 	EndGlobalSection
 EndGlobal

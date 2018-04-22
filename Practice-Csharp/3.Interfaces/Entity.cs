@@ -116,7 +116,7 @@ namespace _3.Interfaces
 
         void TurnEnd()
         {
-            Console.WriteLine(==="End of Turn===");
+            Console.WriteLine("===End of Turn===");
             Console.WriteLine("Next Turn? Q to Quit");
             quit = Console.ReadLine();
         }
