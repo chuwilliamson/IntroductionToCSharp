@@ -2,12 +2,29 @@
 using System.Linq;
 using _4.Serialization.Equipment.Armor;
 using _4.Serialization.Interfaces;
+using Newtonsoft.Json;
+using _4.Serialization.Equipment.Weapons;
 
 namespace _4.Serialization.Base
 {
-    [System.Serializable]
-    public class Class
+    [Serializable]
+    public class Class : IRollable
     {
+        public int Roll()
+        {
+        
+            Type currentWeaponType = Weapon[0].GetType();
+            
+            var proficient = false;
+            foreach (var weapon in Proficiences.Weapons)
+                proficient |= weapon.IsAssignableFrom(currentWeaponType);
+            
+            return proficient ? CurrentWeapon.Roll() + ProficiencyBonus : CurrentWeapon.Roll(); ;
+        }
+
+        public IRollable CurrentWeapon => Weapon[0] as IRollable;
+
+
         public string Name;
         public Race Race;
         public IRollable Attack;
@@ -35,8 +52,8 @@ namespace _4.Serialization.Base
             get
             {
                 var total = 0;
-                total += Armor.Sum(a => ((Armor) a).ArmorClass);
-                total += Shield.Sum(a => ((Armor) a).ArmorClass);
+                total += Armor.Sum(a => ((Armor)a).ArmorClass);
+                total += Shield.Sum(a => ((Armor)a).ArmorClass);
                 return total;
             }
         }

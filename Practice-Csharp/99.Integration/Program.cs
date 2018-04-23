@@ -30,11 +30,11 @@ namespace _99.Integration
             Shield = new IEquipment[] { },
             Proficiences = new Proficiencies
             {
-                Armor = new Type[] { typeof(LightArmor), typeof(MediumArmor), typeof(Shield) },
-                Weapons = new Type[] { typeof(IMartialWeapon), typeof(ISimpleWeapon) },
+                Armor = new[] { typeof(LightArmor), typeof(MediumArmor), typeof(Shield) },
+                Weapons = new[] { typeof(IMartialWeapon),  },
                 Tools = null,
-                SavingThrows = new Type[] { typeof(Strength), typeof(Constitution) },
-                Skills = new Type[]
+                SavingThrows = new[] { typeof(Strength), typeof(Constitution) },
+                Skills = new[]
                 {
                     typeof(AnimalHandling),
                     typeof(Athletics),
@@ -45,45 +45,14 @@ namespace _99.Integration
                 },
             }
         };
-        public class Person
-        {
-            public string Name = "bob";
-            public Stats s;
-        }
-
-        public class Stats
-        {
-            public Abilities Abilities = new Abilities
-            {
-                Modifiers = new Dictionary<string, Modifier>
-                {
-                    { "bob", new Modifier { AffectedAbility = typeof(Strength), Amount = 2} }
-                }
-            };
-        }
+    
 
         static void Main(string[] args)
         {
-
-            var path0 = Path.Combine(Environment.CurrentDirectory, "stats.json");
-            var path1 = Path.Combine(Environment.CurrentDirectory, "Barbarian.json");
-            var path2 = Path.Combine(Environment.CurrentDirectory, "Person.json");
-
-            
-
-            var stats = new Stats();
-            var stats_string = JsonConvert.SerializeObject(stats, Formatting.Indented);
-
-            var person = new Person() { s = stats };
-            var person_string = JsonConvert.SerializeObject(person, Formatting.Indented);
-
-            var barb_string = JsonConvert.SerializeObject(Barbarian, Formatting.Indented);
-            
-            File.WriteAllText(path0, stats_string);
-            File.WriteAllText(path1, barb_string);
-            File.WriteAllText(path2, person_string);
-
-
+            var path = Path.Combine(Environment.CurrentDirectory, "Barbarian.json");
+            int num = Barbarian.Roll();
+            Console.WriteLine(num);
+            Console.ReadLine();
             //1. Choose a Race
             //2. Choose a Class
             //3. Determine Ability Scores

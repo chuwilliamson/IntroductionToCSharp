@@ -4,8 +4,9 @@ using _4.Serialization.Interfaces;
 
 namespace _4.Serialization.Equipment.Weapons
 {
-    public class Club : Weapon, ISimpleWeapon
+    public class Club : Weapon, ISimpleWeapon, IRollable
     {
+   
         public override string Name => "Club";
 
         public override int Cost => 1;
@@ -34,5 +35,10 @@ namespace _4.Serialization.Equipment.Weapons
         }
 
         public override bool IsRanged => false;
+
+        public int Roll()
+        {
+            return Damage.Roll();
+        }
     }
 }

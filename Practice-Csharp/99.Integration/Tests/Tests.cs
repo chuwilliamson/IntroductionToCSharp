@@ -17,7 +17,7 @@ namespace _99.Integration.Tests
 
         public static void TestExperienceRequiredAtLevel(int level)
         {
-       
+        
         }
     }
 }

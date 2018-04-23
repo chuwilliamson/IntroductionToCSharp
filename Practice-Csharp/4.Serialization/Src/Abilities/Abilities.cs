@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 namespace _4.Serialization.Abilities
 {
     [System.Serializable]
-    public class Abilities : IEnumerable
+    public class Abilities
     {
         public Abilities()
         {
@@ -22,12 +22,10 @@ namespace _4.Serialization.Abilities
             };
 
             Modifiers = new Dictionary<string, Modifier>();
-            foreach (var a in _abilities)
+            foreach (Ability a in _abilities)
             {
                 Modifiers.Add(Guid.NewGuid().ToString(), new Modifier { AffectedAbility = a.GetType(), Amount = 5 });
             }
-            
-            
         } 
 
         public List<Ability> _abilities; 
@@ -42,11 +40,6 @@ namespace _4.Serialization.Abilities
         public bool RemoveModifier(Guid guid)
         {
             return Modifiers.Remove(guid.ToString());
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            return ((IEnumerable) _abilities).GetEnumerator();
         }
     }
 }

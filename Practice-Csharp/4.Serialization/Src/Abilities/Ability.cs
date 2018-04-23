@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using _4.Serialization.Base;
 using _4.Serialization.Interfaces;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace _4.Serialization.Abilities
@@ -14,5 +16,6 @@ namespace _4.Serialization.Abilities
         public int Modifier => (Score - 10) / 2;
 
         public string JsonString { get; set; }
+        
     }
 }
