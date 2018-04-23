@@ -1,6 +1,4 @@
-﻿ 
-
-namespace _4.Serialization.Equipment.Armor
+﻿namespace _4.Serialization.Equipment.Armor
 {
     public class Shield : Armor
     {

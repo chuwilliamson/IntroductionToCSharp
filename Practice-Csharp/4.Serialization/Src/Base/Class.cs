@@ -5,6 +5,7 @@ using _4.Serialization.Interfaces;
 
 namespace _4.Serialization.Base
 {
+    [System.Serializable]
     public class Class
     {
         public string Name;

@@ -16,6 +16,7 @@ namespace _4.Serialization.Equipment.Armor
     /// add your proficiency bonus to the attack roll for any attack you make with that weapon. 
     /// If you make an attack roll using a weapon with which you lack proficiency, you do not add your proficiency bonus to the attack roll.
     /// </summary>
+     [System.Serializable]
     public abstract class Armor : Equipment
     {
         public int ArmorClass;

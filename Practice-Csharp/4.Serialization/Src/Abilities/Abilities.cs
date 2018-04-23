@@ -6,6 +6,7 @@ using _4.Serialization.Interfaces;
 
 namespace _4.Serialization.Abilities
 {
+    [System.Serializable]
     public class Abilities : IEnumerable
     {
         public Abilities()
@@ -18,11 +19,10 @@ namespace _4.Serialization.Abilities
                 new Intelligence(),
                 new Wisdom(),
                 new Charisma()
-            };
+            }; 
         }
  
-        private readonly List<Ability> _abilities;
-
+        private List<Ability> _abilities; 
         public Dictionary<Guid, Modifier> Modifiers;
 
         public Guid AddModifier(Modifier modifier)
