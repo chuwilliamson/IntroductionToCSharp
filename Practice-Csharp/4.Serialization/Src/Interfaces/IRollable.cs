@@ -1,4 +1,4 @@
-﻿namespace _4.Serialization
+﻿namespace _4.Serialization.Interfaces
 {
     public interface IRollable
     {

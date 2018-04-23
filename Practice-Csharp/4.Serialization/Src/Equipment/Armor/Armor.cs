@@ -1,6 +1,8 @@
 ﻿using System;
+using _4.Serialization.Abilities;
+using _4.Serialization.Base;
 
-namespace _4.Serialization
+namespace _4.Serialization.Equipment.Armor
 {
     /// <summary>
     /// Your race, class, and feats can grant you proficiency with certain weapons or categories of weapons.

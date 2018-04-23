@@ -1,4 +1,6 @@
-﻿namespace _4.Serialization
+﻿using _4.Serialization.Base;
+
+namespace _4.Serialization.Interfaces
 {
     public interface IWeapon : IEquipment
     {

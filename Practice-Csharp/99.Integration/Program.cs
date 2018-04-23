@@ -1,6 +1,12 @@
 ﻿using _4.Serialization;
 using System;
 using System.Collections.Generic;
+using _4.Serialization.Abilities;
+using _4.Serialization.Base;
+using _4.Serialization.Equipment.Armor;
+using _4.Serialization.Equipment.Weapons;
+using _4.Serialization.Interfaces;
+using _4.Serialization.Skills;
 
 namespace _99.Integration
 {
@@ -10,10 +16,10 @@ namespace _99.Integration
         {
             Name = "Barbarian",
             Experience = 0,
-            IAttack = new Dice(20),
-            IDamage = new Dice(20),
-            IHitDice = new IRollable[] { new Dice(12) },
-            IInitiative = new Dice(20),
+            Attack = new Dice(20),
+            Damage = new Dice(20),
+            HitDice = new IRollable[] { new Dice(12) },
+            Initiative = new Dice(20),
             HitPoints = 12,
             PrimaryAbility = typeof(Strength),
             Abilities = new Abilities(),

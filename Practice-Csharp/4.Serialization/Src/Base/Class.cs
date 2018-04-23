@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Linq;
+using _4.Serialization.Equipment.Armor;
+using _4.Serialization.Interfaces;
 
-namespace _4.Serialization
+namespace _4.Serialization.Base
 {
     public class Class
     {
         public string Name;
         public Race Race;
-        public IRollable IAttack;
-        public IRollable IDamage;
-        public IRollable[] IHitDice;
-        public IRollable IInitiative;
+        public IRollable Attack;
+        public IRollable Damage;
+        public IRollable[] HitDice;
+        public IRollable Initiative;
         public Type PrimaryAbility;
         public int Experience = 0;
         public int Level => 1 + Experience / 300;
@@ -23,7 +25,7 @@ namespace _4.Serialization
         public IEquipment[] Shield;
         public IEquipment[] Weapon;
 
-        public Abilities Abilities;
+        public Abilities.Abilities Abilities;
 
         public Proficiencies Proficiences;
 

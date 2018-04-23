@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace _4.Serialization
+namespace _4.Serialization.Base
 {
     public static class Extensions
     {

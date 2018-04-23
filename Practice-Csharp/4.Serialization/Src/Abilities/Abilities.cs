@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using _4.Serialization.Base;
+using _4.Serialization.Interfaces;
 
-namespace _4.Serialization
+namespace _4.Serialization.Abilities
 {
     public class Abilities : IEnumerable
     {
@@ -28,7 +30,6 @@ namespace _4.Serialization
             if(Modifiers == null)
                 Modifiers = new Dictionary<Guid, Modifier>();
             Modifiers.Add(Guid.NewGuid(), modifier);
-            var mods = Modifiers.Values;
             return Guid.NewGuid();
         }
 

@@ -1,6 +1,8 @@
 ﻿using System;
+using _4.Serialization.Base;
+using _4.Serialization.Interfaces;
 
-namespace _4.Serialization
+namespace _4.Serialization.Abilities
 {
     public class Ability : IAbility
     {

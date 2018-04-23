@@ -1,4 +1,6 @@
-﻿namespace _4.Serialization
+﻿using _4.Serialization.Interfaces;
+
+namespace _4.Serialization.Skills
 {
     public class Acrobatics : ISkill
     {

@@ -1,13 +1,7 @@
 ﻿using System;
 
-
-namespace _4.Serialization
+namespace _4.Serialization.Base
 {
-    public class Proficiency<T>
-    {
-        public T Target;
-        public int Amount;
-    }
     public class Proficiencies
     {
         public Type[] Armor { get; set; }

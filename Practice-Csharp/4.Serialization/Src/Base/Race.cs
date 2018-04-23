@@ -1,4 +1,4 @@
-﻿namespace _4.Serialization
+﻿namespace _4.Serialization.Base
 {
     public class Race
     {

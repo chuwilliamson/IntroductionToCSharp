@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _4.Serialization
+namespace _4.Serialization.Base
 {
     public static class Globals
     {

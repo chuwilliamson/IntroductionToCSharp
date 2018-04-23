@@ -1,4 +1,6 @@
-﻿namespace _4.Serialization
+﻿using _4.Serialization.Interfaces;
+
+namespace _4.Serialization.Base
 {
     public class Dice : IRollable
     {
