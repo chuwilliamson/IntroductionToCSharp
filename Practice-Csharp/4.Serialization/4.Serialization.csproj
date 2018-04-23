@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Src\Abilities\Ability.cs" />
     <Compile Include="Src\Abilities\Abilities.cs" />
+    <Compile Include="Src\Abilities\Intelligence.cs" />
     <Compile Include="Src\Base\Proficiency.cs" />
     <Compile Include="Src\Skills\AnimalHandling.cs" />
     <Compile Include="Src\Skills\Athletics.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Src\Interfaces\IEquipment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Src\Interfaces\IMartialWeapon.cs" />
-    <Compile Include="Src\Interfaces\Intelligence.cs" />
     <Compile Include="Src\Interfaces\IRollable.cs" />
     <Compile Include="Src\Interfaces\ISimpleWeapon.cs" />
     <Compile Include="Src\Interfaces\IWeapon.cs" />
