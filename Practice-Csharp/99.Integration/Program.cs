@@ -7,6 +7,7 @@ using _4.Serialization.Equipment.Armor;
 using _4.Serialization.Equipment.Weapons;
 using _4.Serialization.Interfaces;
 using _4.Serialization.Skills;
+using Newtonsoft.Json;
 
 namespace _99.Integration
 {
@@ -49,6 +50,11 @@ namespace _99.Integration
             var a = new Abilities();
             var DwarfRacial = new Modifier { Amount = 2, AffectedAbility = typeof(Constitution) };
             var drguid = a.AddModifier(DwarfRacial);
+            //str.JsonString = JsonConvert.SerializeObject(str);
+            System.IO.File.WriteAllText(Environment.CurrentDirectory + "test.json", str.JsonString);
+            var newstr = JsonConvert.DeserializeObject(System.IO.File.ReadAllText(Environment.CurrentDirectory + "test.json"));
+            var characterJson = JsonConvert.SerializeObject(Barbarian);
+            System.IO.File.WriteAllText(Environment.CurrentDirectory + "character.json", characterJson);
             //1. Choose a Race
             //2. Choose a Class
             //3. Determine Ability Scores

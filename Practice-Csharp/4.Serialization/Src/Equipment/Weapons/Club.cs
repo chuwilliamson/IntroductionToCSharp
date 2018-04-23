@@ -25,7 +25,14 @@ namespace _4.Serialization.Equipment.Weapons
             get { return DamageType.Bludgeoning; }
         }
 
-        public override object[] SpecialProperties => throw new NotImplementedException();
+        public override object[] SpecialProperties
+        {
+            get
+            {
+                return new object[5];
+            }
+        }
+
         public override bool IsRanged => false;
     }
 }

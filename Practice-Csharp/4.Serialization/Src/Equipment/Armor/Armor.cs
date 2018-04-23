@@ -24,10 +24,10 @@ namespace _4.Serialization.Equipment.Armor
         protected Strength Strength { get; set; }
         protected bool Stealth { get; set; }
 
-        public override string Name => throw new NotImplementedException();
+        public override string Name => "default";
 
-        public override int Cost => throw new NotImplementedException();
+        public override int Cost => 0;
 
-        public override int Weight => throw new NotImplementedException();
+        public override int Weight => 0;
     }
 }

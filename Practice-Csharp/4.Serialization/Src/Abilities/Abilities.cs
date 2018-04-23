@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _4.Serialization.Base;
 using _4.Serialization.Interfaces;
-
+using Newtonsoft.Json;
 namespace _4.Serialization.Abilities
 {
     [System.Serializable]
