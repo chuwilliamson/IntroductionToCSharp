@@ -1,6 +1,7 @@
-﻿
-
-namespace _4.Serialization
+﻿namespace _4.Serialization
 {
-    public interface IRollable { int Roll();}
+    public interface IRollable
+    {
+        int Roll();
+    }
 }

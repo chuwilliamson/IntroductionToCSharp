@@ -47,17 +47,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\Abilities\Ability.cs" />
-    <Compile Include="Src\Base\Abilities.cs" />
-    <Compile Include="Src\Base\CharacterCreator.cs" />
+    <Compile Include="Src\Abilities\Abilities.cs" />
+    <Compile Include="Src\Skills\AnimalHandling.cs" />
+    <Compile Include="Src\Skills\Athletics.cs" />
+    <Compile Include="Src\Base\Class.cs" />
+    <Compile Include="Src\Base\DamageType.cs" />
+    <Compile Include="Src\Base\Globals.cs" />
+    <Compile Include="Src\Skills\History.cs" />
+    <Compile Include="Src\Skills\Insight.cs" />
+    <Compile Include="Src\Skills\Intimidation.cs" />
+    <Compile Include="Src\Interfaces\ISkill.cs" />
+    <Compile Include="Src\Skills\Nature.cs" />
+    <Compile Include="Src\Skills\Perception.cs" />
+    <Compile Include="Src\Base\Race.cs" />
+    <Compile Include="Src\Skills\Survival.cs" />
     <Compile Include="Src\Equipment\Armor\Armor.cs" />
-    <Compile Include="Src\Base\Character.cs" />
+    <Compile Include="Src\Base\Entity.cs" />
     <Compile Include="Src\Abilities\Charisma.cs" />
     <Compile Include="Src\Equipment\Weapons\Club.cs" />
     <Compile Include="Src\Abilities\Constitution.cs" />
     <Compile Include="Src\Equipment\Weapons\Dagger.cs" />
     <Compile Include="Src\Abilities\Dexterity.cs" />
     <Compile Include="Src\Base\Dice.cs" />
-    <Compile Include="Src\Base\Skills.cs" />
+    <Compile Include="Src\Skills\Acrobatics.cs" />
     <Compile Include="Src\Equipment\Equipment.cs" />
     <Compile Include="Src\Base\Extensions.cs" />
     <Compile Include="Src\Equipment\Armor\HeavyArmor.cs" />

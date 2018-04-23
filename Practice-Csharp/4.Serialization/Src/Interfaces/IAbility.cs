@@ -1,6 +1,8 @@
-﻿
-
-namespace _4.Serialization
+﻿namespace _4.Serialization
 {
-    public interface IAbility { int Score { get; } }
+    public interface IAbility
+    {
+        System.Type Type { get; }
+        int Score { get; } 
+    }
 }

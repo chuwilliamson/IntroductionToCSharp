@@ -1,5 +1,6 @@
-﻿
-namespace _4.Serialization
+﻿namespace _4.Serialization
 {
-    public class Intelligence : Ability { }
+    public class Intelligence : Ability
+    {
+    }
 }

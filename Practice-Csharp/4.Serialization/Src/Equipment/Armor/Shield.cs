@@ -10,7 +10,10 @@
 /// add your proficiency bonus to the attack roll for any attack you make with that weapon. 
 /// If you make an attack roll using a weapon with which you lack proficiency, you do not add your proficiency bonus to the attack roll.
 /// </summary>
+
 namespace _4.Serialization
 {
-    public class Shield : Armor { }
+    public class Shield : Armor
+    {
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+
 /// <summary>
 /// Your race, class, and feats can grant you proficiency with certain weapons or categories of weapons.
 /// The two categories are simple and martial.

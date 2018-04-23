@@ -1,8 +1,6 @@
-﻿
-
-namespace _4.Serialization
+﻿namespace _4.Serialization
 {
-    public interface IWeapon: IEquipment
+    public interface IWeapon : IEquipment
     {
         bool IsRanged { get; }
         IRollable Damage { get; }

@@ -1,6 +1,6 @@
-﻿
-
-namespace _4.Serialization
+﻿namespace _4.Serialization
 {
-    public interface ISimpleWeapon : IWeapon { }
+    public interface ISimpleWeapon : IWeapon
+    {
+    }
 }
