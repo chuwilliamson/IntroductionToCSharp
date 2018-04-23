@@ -19,23 +19,29 @@ namespace _4.Serialization.Abilities
                 new Intelligence(),
                 new Wisdom(),
                 new Charisma()
-            }; 
-        }
- 
-        private List<Ability> _abilities; 
-        public Dictionary<Guid, Modifier> Modifiers;
+            };
+
+            Modifiers = new Dictionary<string, Modifier>();
+            foreach (var a in _abilities)
+            {
+                Modifiers.Add(Guid.NewGuid().ToString(), new Modifier { AffectedAbility = a.GetType(), Amount = 5 });
+            }
+            
+            
+        } 
+
+        public List<Ability> _abilities; 
+        public Dictionary<string, Modifier> Modifiers;
 
         public Guid AddModifier(Modifier modifier)
         {
-            if(Modifiers == null)
-                Modifiers = new Dictionary<Guid, Modifier>();
-            Modifiers.Add(Guid.NewGuid(), modifier);
+            Modifiers.Add(Guid.NewGuid().ToString(), modifier);
             return Guid.NewGuid();
         }
 
         public bool RemoveModifier(Guid guid)
         {
-            return Modifiers.Remove(guid);
+            return Modifiers.Remove(guid.ToString());
         }
 
         public IEnumerator GetEnumerator()

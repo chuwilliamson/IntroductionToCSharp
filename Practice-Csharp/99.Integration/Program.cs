@@ -1,5 +1,6 @@
 ﻿using _4.Serialization;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using _4.Serialization.Abilities;
 using _4.Serialization.Base;
@@ -44,17 +45,45 @@ namespace _99.Integration
                 },
             }
         };
+        public class Person
+        {
+            public string Name = "bob";
+            public Stats s;
+        }
+
+        public class Stats
+        {
+            public Abilities Abilities = new Abilities
+            {
+                Modifiers = new Dictionary<string, Modifier>
+                {
+                    { "bob", new Modifier { AffectedAbility = typeof(Strength), Amount = 2} }
+                }
+            };
+        }
+
         static void Main(string[] args)
         {
-            var str = new Strength();
-            var a = new Abilities();
-            var DwarfRacial = new Modifier { Amount = 2, AffectedAbility = typeof(Constitution) };
-            var drguid = a.AddModifier(DwarfRacial);
-            //str.JsonString = JsonConvert.SerializeObject(str);
-            System.IO.File.WriteAllText(Environment.CurrentDirectory + "test.json", str.JsonString);
-            var newstr = JsonConvert.DeserializeObject(System.IO.File.ReadAllText(Environment.CurrentDirectory + "test.json"));
-            var characterJson = JsonConvert.SerializeObject(Barbarian);
-            System.IO.File.WriteAllText(Environment.CurrentDirectory + "character.json", characterJson);
+
+            var path0 = Path.Combine(Environment.CurrentDirectory, "stats.json");
+            var path1 = Path.Combine(Environment.CurrentDirectory, "Barbarian.json");
+            var path2 = Path.Combine(Environment.CurrentDirectory, "Person.json");
+
+            
+
+            var stats = new Stats();
+            var stats_string = JsonConvert.SerializeObject(stats, Formatting.Indented);
+
+            var person = new Person() { s = stats };
+            var person_string = JsonConvert.SerializeObject(person, Formatting.Indented);
+
+            var barb_string = JsonConvert.SerializeObject(Barbarian, Formatting.Indented);
+            
+            File.WriteAllText(path0, stats_string);
+            File.WriteAllText(path1, barb_string);
+            File.WriteAllText(path2, person_string);
+
+
             //1. Choose a Race
             //2. Choose a Class
             //3. Determine Ability Scores
