@@ -51,12 +51,10 @@ namespace _99.Integration
         {
             var path = Path.Combine(Environment.CurrentDirectory, "Barbarian.json");
             int num = Barbarian.Roll();
-            Console.WriteLine(num);
+            Console.WriteLine(num);            
+            var monster = new Wolf();
+            monster.Action.Invoke();
             Console.ReadLine();
-            //1. Choose a Race
-            //2. Choose a Class
-            //3. Determine Ability Scores
-            //4. Describe your character            
 
         }
     }
