@@ -2,8 +2,6 @@
 using System.Linq;
 using _4.Serialization.Equipment.Armor;
 using _4.Serialization.Interfaces;
-using Newtonsoft.Json;
-using _4.Serialization.Equipment.Weapons;
 
 namespace _4.Serialization.Base
 {
@@ -12,17 +10,14 @@ namespace _4.Serialization.Base
     {
         public int Roll()
         {
-        
-            Type currentWeaponType = Weapon[0].GetType();
-            
             var proficient = false;
             foreach (var weapon in Proficiences.Weapons)
-                proficient |= weapon.IsAssignableFrom(currentWeaponType);
-            
-            return proficient ? CurrentWeapon.Roll() + ProficiencyBonus : CurrentWeapon.Roll(); ;
+                proficient |= weapon.IsInstanceOfType(Weapon[0]);
+            var rollamount = CurrentWeapon.Roll();
+            return proficient ? rollamount + ProficiencyBonus : rollamount;
         }
 
-        public IRollable CurrentWeapon => Weapon[0] as IRollable;
+        
 
 
         public string Name;
@@ -42,6 +37,7 @@ namespace _4.Serialization.Base
         public IEquipment[] Armor;
         public IEquipment[] Shield;
         public IEquipment[] Weapon;
+        public IRollable CurrentWeapon => Weapon[0] as IRollable;
 
         public Abilities.Abilities Abilities;
 

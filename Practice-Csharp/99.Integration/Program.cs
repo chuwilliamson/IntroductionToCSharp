@@ -31,7 +31,7 @@ namespace _99.Integration
             Proficiences = new Proficiencies
             {
                 Armor = new[] { typeof(LightArmor), typeof(MediumArmor), typeof(Shield) },
-                Weapons = new[] { typeof(IMartialWeapon),  },
+                Weapons = new[] { typeof(IMartialWeapon), typeof(ISimpleWeapon) },
                 Tools = null,
                 SavingThrows = new[] { typeof(Strength), typeof(Constitution) },
                 Skills = new[]

@@ -43,6 +43,10 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,7 +57,9 @@
     <Compile Include="Src\Abilities\Ability.cs" />
     <Compile Include="Src\Abilities\Abilities.cs" />
     <Compile Include="Src\Abilities\Intelligence.cs" />
+    <Compile Include="Src\Base\Monster.cs" />
     <Compile Include="Src\Base\Proficiency.cs" />
+    <Compile Include="Src\Base\Wolf.cs" />
     <Compile Include="Src\Interfaces\ISaveable.cs" />
     <Compile Include="Src\Skills\AnimalHandling.cs" />
     <Compile Include="Src\Skills\Athletics.cs" />
@@ -67,6 +73,7 @@
     <Compile Include="Src\Skills\Nature.cs" />
     <Compile Include="Src\Skills\Perception.cs" />
     <Compile Include="Src\Base\Race.cs" />
+    <Compile Include="Src\Skills\Stealth.cs" />
     <Compile Include="Src\Skills\Survival.cs" />
     <Compile Include="Src\Equipment\Armor\Armor.cs" />
     <Compile Include="Src\Base\Entity.cs" />
