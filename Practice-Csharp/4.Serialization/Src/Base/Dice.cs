@@ -10,7 +10,7 @@ namespace _4.Serialization.Base
         }
 
         public int Value { get; set; }
-
+        
         public int Roll()
         {
             return Globals.RandomSeed.Next(Value + 1);

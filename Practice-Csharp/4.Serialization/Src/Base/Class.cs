@@ -6,23 +6,40 @@ using _4.Serialization.Interfaces;
 namespace _4.Serialization.Base
 {
     [Serializable]
-    public class Class : IRollable
+    public class Class
     {
-        public int Roll()
+        internal sealed class BarbarianAttackRoll : IRollable
         {
-            var proficient = false;
-            foreach (var weapon in Proficiences.Weapons)
-                proficient |= weapon.IsInstanceOfType(Weapon[0]);
-            var rollamount = CurrentWeapon.Roll();
-            return proficient ? rollamount + ProficiencyBonus : rollamount;
+            private readonly Class owner;
+            public BarbarianAttackRoll(Class owner)
+            {
+                this.owner = owner;
+            }
+            
+            public int Roll()
+            {
+                var proficient = false;
+                foreach (var weapon in owner.Proficiences.Weapons)
+                    proficient |= weapon.IsInstanceOfType(owner.Weapon[0]);
+                var w = (owner.Weapon[0] as IWeapon);
+                var dice = w?.Damage as Dice;
+                var max = dice?.Value;
+                var rollamount = owner.CurrentWeapon.Roll();
+                var extra = proficient ? owner.ProficiencyBonus : 0;
+                var info = string.Format("rolled a {0} out of a possible {1} with modifier + {2}", rollamount, max, extra);
+                System.Console.WriteLine(info);
+                return proficient ? rollamount + owner.ProficiencyBonus : rollamount;
+            }
         }
-
-        
-
+ 
+        public IRollable Attack
+        {
+            get { return new BarbarianAttackRoll(this); }
+        }
 
         public string Name;
         public Race Race;
-        public IRollable Attack;
+        
         public IRollable Damage;
         public IRollable[] HitDice;
         public IRollable Initiative;

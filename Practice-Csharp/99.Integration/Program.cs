@@ -14,11 +14,10 @@ namespace _99.Integration
 {
     class Program
     {
-        public static readonly Class Barbarian = new Class()
+        public static readonly Class Barbarian = new Class
         {
             Name = "Barbarian",
             Experience = 0,
-            Attack = new Dice(20),
             Damage = new Dice(20),
             HitDice = new IRollable[] { new Dice(12) },
             Initiative = new Dice(20),
@@ -50,13 +49,28 @@ namespace _99.Integration
         static void Main(string[] args)
         {
             var path = Path.Combine(Environment.CurrentDirectory, "Barbarian.json");
-            int num = Barbarian.Roll();
-            Console.WriteLine(num);
-            Console.ReadLine();
-            //1. Choose a Race
-            //2. Choose a Class
-            //3. Determine Ability Scores
-            //4. Describe your character            
+
+            ConsoleKey input;
+            while ((input = Console.ReadKey().Key) != ConsoleKey.Q)
+            {
+                Console.Clear();
+                Console.WriteLine("result => " + Barbarian.Attack.Roll());
+                var CurrentWeapon = Barbarian.Weapon[0];
+                Console.WriteLine("current weapon " + CurrentWeapon.ToString());
+                if (input == ConsoleKey.F)
+                {
+                    Barbarian.Weapon[0] = new Dagger();
+                 
+                }
+                if (input == ConsoleKey.C)
+                {
+                    Barbarian.Weapon[0] = new Club();
+                    
+                }
+
+
+            }
+    
 
         }
     }

@@ -5,62 +5,40 @@ using _4.Serialization.Interfaces;
 
 namespace _4.Serialization.Equipment.Weapons
 {
-    public class Dagger : ISimpleWeapon
+    public class Dagger : Weapon, IRollable
     {
-        public int Cost
+        public override string Name => "Club";
+
+        public override int Cost => 1;
+
+        public override int Weight
+        {
+            get { return 2; }
+        }
+
+        public override IRollable Damage
+        {
+            get { return new Dice(4); }
+        }
+
+        public override DamageType DamageType
+        {
+            get { return DamageType.Bludgeoning; }
+        }
+
+        public override object[] SpecialProperties
         {
             get
             {
-                throw new NotImplementedException();
+                return new object[5];
             }
         }
 
-        public IRollable Damage
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public override bool IsRanged => false;
 
-        public DamageType DamageType
+        public int Roll()
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool IsRanged
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public object[] SpecialProperties
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int Weight
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            return Damage.Roll();
         }
     }
 }
