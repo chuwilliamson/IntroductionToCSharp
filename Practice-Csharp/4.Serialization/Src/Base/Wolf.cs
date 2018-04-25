@@ -1,5 +1,4 @@
 ﻿using System;
-using _4.Serialization.Interfaces;
 using _4.Serialization.Skills;
 
 namespace _4.Serialization.Base
@@ -9,12 +8,9 @@ namespace _4.Serialization.Base
         public override int ArmorCount => 13;
         public override int HitPoints => 11;
         public override int Speed => 40;
-         
 
-        public override ISkill[] Skills
-        {
-            get { return new ISkill[]{new Perception(), new Stealth()}; }
-        }
+
+        public override ISkill[] Skills => new ISkill[] {new Perception(), new Stealth()};
 
         public override Action Action
 
@@ -22,7 +18,7 @@ namespace _4.Serialization.Base
             get
             {
                 Console.WriteLine("Wolf Attack!");
-                return ()=> new Dice(4).Roll();
+                return () => new Dice(4).Roll();
             }
         }
     }

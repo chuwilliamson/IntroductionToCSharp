@@ -2,7 +2,7 @@
 
 namespace _4.Serialization.Base
 {
-    [System.Serializable]
+    [Serializable]
     public class Proficiencies
     {
         public Type[] Armor { get; set; }

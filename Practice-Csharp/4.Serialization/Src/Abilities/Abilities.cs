@@ -1,37 +1,13 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using _4.Serialization.Base;
-using _4.Serialization.Interfaces;
 
 namespace _4.Serialization.Abilities
 {
-    public enum AbilityType
-    {
-        STRENGTH = 1,
-        DEXTERITY = 2,
-        CONSTITUTION = 3,
-        WISDOM =4,
-        INTELLIGENCE =5,
-        CHARISMA = 6
-    }
-
-    public interface IAbilities
-    {
-        Strength STR { get; }
-        Dexterity DEX { get; }
-        Constitution CON { get; }
-        Wisdom WIS { get; }
-        Intelligence INT { get; }
-        Charisma CHR { get; }
-    }
-
-    [System.Serializable]
-    public class Abilities
+    [Serializable]
+    public class Abilities : IAbilities
     {
         public Abilities()
         {
-            IAbilities = new List<IAbility>
+            IAbilities = new IAbility[]
             {
                 new Strength(),
                 new Dexterity(),
@@ -40,27 +16,15 @@ namespace _4.Serialization.Abilities
                 new Wisdom(),
                 new Charisma()
             };
-
-            Modifiers = new Dictionary<string, Modifier>();
-            foreach (var a in IAbilities)
-            {
-                Modifiers.Add(Guid.NewGuid().ToString(), new Modifier { AffectedAbility = a.GetType(), Amount = 5 });
-            }
         }
 
-        public List<IAbility> IAbilities { get; set; }
+        public IAbility[] IAbilities { get; set; }
 
-        public Dictionary<string, Modifier> Modifiers;
-
-        public Guid AddModifier(Modifier modifier)
-        {
-            Modifiers.Add(Guid.NewGuid().ToString(), modifier);
-            return Guid.NewGuid();
-        }
-
-        public bool RemoveModifier(Guid guid)
-        {
-            return Modifiers.Remove(guid.ToString());
-        }
+        public IAbility Strength => IAbilities[0];
+        public IAbility Dexterity => IAbilities[1];
+        public IAbility Constitution => IAbilities[2];
+        public IAbility Wisdom => IAbilities[3];
+        public IAbility Intelligence => IAbilities[4];
+        public IAbility Charisma => IAbilities[5];
     }
 }

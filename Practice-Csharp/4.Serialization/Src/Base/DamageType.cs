@@ -2,8 +2,8 @@
 {
     public enum DamageType
     {
-        Bludgeoning,
-        Piercing,
-        Slashing
+        Bludgeoning = 0,
+        Piercing = 1,
+        Slashing = 2
     }
 }

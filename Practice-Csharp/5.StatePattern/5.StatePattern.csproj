@@ -37,19 +37,20 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="IContext.cs" />
+    <Compile Include="IInfo.cs" />
+    <Compile Include="IState.cs" />
+    <Compile Include="GameContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="States\GameStates.cs" />
+    <Compile Include="States\GameExitState.cs" />
+    <Compile Include="States\GameRunningState.cs" />
+    <Compile Include="States\GameStartState.cs" />
+    <Compile Include="States\ZyronState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,5 +1,5 @@
 ﻿using System;
-using _4.Serialization.Interfaces;
+using _4.Serialization.Skills;
 
 namespace _4.Serialization.Base
 {

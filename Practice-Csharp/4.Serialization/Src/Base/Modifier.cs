@@ -2,10 +2,15 @@
 
 namespace _4.Serialization.Base
 {
-    [System.Serializable]
+    public class Modifier<T> : Modifier
+    {
+        public override Type AffectedAbility => typeof(T);
+    }
+
+    [Serializable]
     public class Modifier
     {
-        public Type AffectedAbility;
-        public int Amount;
+        public virtual Type AffectedAbility { get; set; }
+        public virtual int Amount { get; set; }
     }
 }

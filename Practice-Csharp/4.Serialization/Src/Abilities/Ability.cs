@@ -1,36 +1,30 @@
 ﻿using System;
-using System.Collections;
 using _4.Serialization.Base;
-using _4.Serialization.Interfaces;
-using System.Collections.Generic;
-using Newtonsoft.Json;
 
 namespace _4.Serialization.Abilities
 {
-    [System.Serializable]
-    public class Ability : IAbility, ISaveable
+    [Serializable]
+    public class Ability : IAbility, ILogger
     {
         public Ability()
         {
             _score = Extensions.Roll4AddTop3;
         }
+        
         public Type Type => GetType();
-        public int Value;// => Score;
         public int _score;
-
-        public int Score
-        {
-            get { return _score; }
-            set
-            {
-                _score = value;
-                
-            }
-        }
-
+        public int Score => _score;
         public int Modifier => (Score - 10) / 2;
 
-        public string JsonString { get; set; }
-        
+        public override string ToString() 
+        {
+            return GetType().Name;
+        }
+
+        public string Info => string.Format("Name: {0} Score: {1} Modifier: {2}", ToString(), Score, Modifier);
+        public void Log()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

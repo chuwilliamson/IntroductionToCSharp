@@ -1,6 +1,6 @@
 ﻿using _4.Serialization.Base;
 
-namespace _4.Serialization.Interfaces
+namespace _4.Serialization.Equipment.Weapons
 {
     public interface IWeapon : IEquipment
     {

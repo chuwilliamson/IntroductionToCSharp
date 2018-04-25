@@ -1,14 +1,11 @@
-﻿using _4.Serialization;
-using System;
+﻿using System;
 using System.IO;
-using System.Collections.Generic;
 using _4.Serialization.Abilities;
 using _4.Serialization.Base;
+using _4.Serialization.Equipment;
 using _4.Serialization.Equipment.Armor;
 using _4.Serialization.Equipment.Weapons;
-using _4.Serialization.Interfaces;
 using _4.Serialization.Skills;
-using Newtonsoft.Json;
 
 namespace _99.Integration
 {
@@ -18,64 +15,51 @@ namespace _99.Integration
         {
             Name = "Barbarian",
             Experience = 0,
-            Damage = new Dice(20),
-            HitDice = new IRollable[] { new Dice(12) },
+            HitDice = new IRollable[] {new Dice(12)},
             Initiative = new Dice(20),
             HitPoints = 12,
             PrimaryAbility = typeof(Strength),
             Abilities = new Abilities(),
-            Armor = new IEquipment[] { new HeavyArmor() },
-            Weapon = new IEquipment[] { new Club() },
-            Shield = new IEquipment[] { },
+            Armor = new IEquipment[] {new Padded()},
+            Weapon = new IEquipment[] {new Club()},
+            Shield = new IEquipment[] {new Shield()},
             Proficiences = new Proficiencies
             {
-                Armor = new[] { typeof(LightArmor), typeof(MediumArmor), typeof(Shield) },
-                Weapons = new[] { typeof(IMartialWeapon), typeof(ISimpleWeapon) },
+                Armor = new[] {typeof(ILightArmor), typeof(IMediumArmor), typeof(Shield)},
+                Weapons = new[] {typeof(IMartialWeapon), typeof(ISimpleWeapon)},
                 Tools = null,
-                SavingThrows = new[] { typeof(Strength), typeof(Constitution) },
+                SavingThrows = new[] {typeof(Strength), typeof(Constitution)},
                 Skills = new[]
                 {
-                    typeof(AnimalHandling),
-                    typeof(Athletics),
-                    typeof(Intimidation),
-                    typeof(Nature),
-                    typeof(Perception),
+                    typeof(AnimalHandling), typeof(Athletics), typeof(Intimidation), typeof(Nature), typeof(Perception),
                     typeof(Survival)
-                },
+                }
             }
         };
-    
 
-        static void Main(string[] args)
+
+        static void Main()
         {
-            var path = Path.Combine(Environment.CurrentDirectory, "Barbarian.json");
-
-            ConsoleKey input;
-            while ((input = Console.ReadKey().Key) != ConsoleKey.Q)
+            var path = Path.Combine(path1: Environment.CurrentDirectory, path2: "Barbarian.json");
+            var input = ConsoleKey.Play;
+            while (input != ConsoleKey.Q)
             {
-                Console.Clear();
-                Console.WriteLine("result => " + Barbarian.Attack.Roll());
+                var weapons = new IWeapon[] {new Greatsword(), new Club(), new Dart(), new Dagger()};
+
+                Barbarian.Weapon[0] = weapons[new Random().Next(4)];
+
                 var CurrentWeapon = Barbarian.Weapon[0];
-                Console.WriteLine("current weapon " + CurrentWeapon.ToString());
-                foreach (IAbility ability in Barbarian.Abilities.IAbilities)
-                {
-                    System.Console.WriteLine(ability.ToString() + " :: " + ability.Score);
-                }
-                if (input == ConsoleKey.F)
-                {
-                    Barbarian.Weapon[0] = new Dagger();
-                 
-                }
-                if (input == ConsoleKey.C)
-                {
-                    Barbarian.Weapon[0] = new Club();
-                    
-                }
 
+                Console.Clear();
 
+                Console.WriteLine("Current Weapon " + CurrentWeapon.Info);
+                Console.WriteLine("Attack Roll => " + Barbarian.Attack.Roll());
+                Console.WriteLine("Damage Roll => " + Barbarian.Damage.Roll());
+                foreach (var ability in Barbarian.Abilities.IAbilities)
+                    Console.WriteLine(value: ability.Info);
+
+                input = Console.ReadKey().Key;
             }
-    
-
         }
     }
 }

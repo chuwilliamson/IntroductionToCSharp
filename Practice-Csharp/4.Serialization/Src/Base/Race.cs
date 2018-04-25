@@ -1,6 +1,8 @@
-﻿namespace _4.Serialization.Base
+﻿using System;
+
+namespace _4.Serialization.Base
 {
-    [System.Serializable]
+    [Serializable]
     public class Race
     {
         public string Name;

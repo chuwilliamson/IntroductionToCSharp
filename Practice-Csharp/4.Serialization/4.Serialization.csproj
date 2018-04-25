@@ -39,28 +39,28 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\Abilities\Ability.cs" />
     <Compile Include="Src\Abilities\Abilities.cs" />
+    <Compile Include="Src\Abilities\AbilityType.cs" />
+    <Compile Include="Src\Abilities\IAbilities.cs" />
+    <Compile Include="Src\Base\ILogger.cs" />
     <Compile Include="Src\Abilities\Intelligence.cs" />
     <Compile Include="Src\Base\Monster.cs" />
     <Compile Include="Src\Base\Proficiency.cs" />
     <Compile Include="Src\Base\Wolf.cs" />
-    <Compile Include="Src\Interfaces\ISaveable.cs" />
+    <Compile Include="Src\Equipment\Armor\IArmor.cs" />
+    <Compile Include="Src\Equipment\Armor\ILightArmor.cs" />
+    <Compile Include="Src\Equipment\Armor\IMediumArmor.cs" />
+    <Compile Include="Src\Equipment\Armor\Leather.cs" />
+    <Compile Include="Src\Equipment\Armor\Padded.cs" />
+    <Compile Include="Src\Equipment\Armor\StuddedLeather.cs" />
+    <Compile Include="Src\Equipment\Weapons\Battleaxe.cs" />
+    <Compile Include="Src\Equipment\Weapons\Dart.cs" />
+    <Compile Include="Src\Equipment\Weapons\Greatsword.cs" />
     <Compile Include="Src\Skills\AnimalHandling.cs" />
     <Compile Include="Src\Skills\Athletics.cs" />
     <Compile Include="Src\Base\Class.cs" />
@@ -69,7 +69,7 @@
     <Compile Include="Src\Skills\History.cs" />
     <Compile Include="Src\Skills\Insight.cs" />
     <Compile Include="Src\Skills\Intimidation.cs" />
-    <Compile Include="Src\Interfaces\ISkill.cs" />
+    <Compile Include="Src\Skills\ISkill.cs" />
     <Compile Include="Src\Skills\Nature.cs" />
     <Compile Include="Src\Skills\Perception.cs" />
     <Compile Include="Src\Base\Race.cs" />
@@ -86,16 +86,14 @@
     <Compile Include="Src\Skills\Acrobatics.cs" />
     <Compile Include="Src\Equipment\Equipment.cs" />
     <Compile Include="Src\Base\Extensions.cs" />
-    <Compile Include="Src\Equipment\Armor\HeavyArmor.cs" />
-    <Compile Include="Src\Interfaces\IAbility.cs" />
-    <Compile Include="Src\Interfaces\IEquipment.cs" />
+    <Compile Include="Src\Abilities\IAbility.cs" />
+    <Compile Include="Src\Equipment\IEquipment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Src\Interfaces\IMartialWeapon.cs" />
-    <Compile Include="Src\Interfaces\IRollable.cs" />
-    <Compile Include="Src\Interfaces\ISimpleWeapon.cs" />
-    <Compile Include="Src\Interfaces\IWeapon.cs" />
-    <Compile Include="Src\Equipment\Armor\LightArmor.cs" />
-    <Compile Include="Src\Equipment\Armor\MediumArmor.cs" />
+    <Compile Include="Src\Equipment\Weapons\IMartialWeapon.cs" />
+    <Compile Include="Src\Base\IRollable.cs" />
+    <Compile Include="Src\Equipment\Weapons\ISimpleWeapon.cs" />
+    <Compile Include="Src\Equipment\Weapons\IWeapon.cs" />
+    <Compile Include="Src\Equipment\Armor\IHeavyArmor.cs" />
     <Compile Include="Src\Base\Modifier.cs" />
     <Compile Include="Src\Base\Proficiencies.cs" />
     <Compile Include="Src\Equipment\Armor\Shield.cs" />
@@ -106,7 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

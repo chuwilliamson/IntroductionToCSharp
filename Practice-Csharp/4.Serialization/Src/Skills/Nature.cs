@@ -1,6 +1,4 @@
-﻿using _4.Serialization.Interfaces;
-
-namespace _4.Serialization.Skills
+﻿namespace _4.Serialization.Skills
 {
     public class Nature : ISkill
     {

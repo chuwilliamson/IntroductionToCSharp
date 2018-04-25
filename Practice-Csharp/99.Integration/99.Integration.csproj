@@ -39,12 +39,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -56,6 +50,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\0.IntroToCsharp\0.IntroToCsharp.csproj">
+      <Project>{a789e6dc-ce1d-4874-8903-8b7ab02e84cc}</Project>
+      <Name>0.IntroToCsharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\1.Containers\1.Containers.csproj">
+      <Project>{da6dfe3c-d0a7-49cd-9353-83153ba92b5b}</Project>
+      <Name>1.Containers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2.CombatForms\2.CombatForms.csproj">
+      <Project>{1b5d94d5-a6b6-483b-85d2-ec46c1e30552}</Project>
+      <Name>2.CombatForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3.Interfaces\3.Interfaces.csproj">
+      <Project>{bbdfd880-300e-41b3-8585-8d78f349f3e4}</Project>
+      <Name>3.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\4.Serialization\4.Serialization.csproj">
       <Project>{532283bc-e1a3-4461-baee-03406efad98c}</Project>
       <Name>4.Serialization</Name>

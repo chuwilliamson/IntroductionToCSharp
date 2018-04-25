@@ -1,6 +1,8 @@
-﻿namespace _4.Serialization.Abilities
+﻿using System;
+
+namespace _4.Serialization.Abilities
 {
-    [System.Serializable]
+    [Serializable]
     public class Wisdom : Ability
     {
     }
