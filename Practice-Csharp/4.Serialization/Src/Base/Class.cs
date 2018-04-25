@@ -21,14 +21,17 @@ namespace _4.Serialization.Base
                 var proficient = false;
                 foreach (var weapon in owner.Proficiences.Weapons)
                     proficient |= weapon.IsInstanceOfType(owner.Weapon[0]);
-                var w = (owner.Weapon[0] as IWeapon);
-                var dice = w?.Damage as Dice;
-                var max = dice?.Value;
-                var rollamount = owner.CurrentWeapon.Roll();
-                var extra = proficient ? owner.ProficiencyBonus : 0;
-                var info = string.Format("rolled a {0} out of a possible {1} with modifier + {2}", rollamount, max, extra);
+         
+                var rollamount = new Dice(20).Roll();
+                var abilityModifier = (owner.CurrentWeapon as IWeapon).IsRanged ? 
+                    owner.Abilities.IAbilities[1].Score :
+                    owner.Abilities.IAbilities[0].Score;
+
+                var extra = proficient ? owner.ProficiencyBonus + abilityModifier: abilityModifier;
+                
+                var info = string.Format("rolled a {0} out of a possible {1} with prof modifier + {2} and ability modifier + {3}", rollamount, 20, owner.ProficiencyBonus, abilityModifier);
                 System.Console.WriteLine(info);
-                return proficient ? rollamount + owner.ProficiencyBonus : rollamount;
+                return rollamount + extra;
             }
         }
  

@@ -57,6 +57,10 @@ namespace _99.Integration
                 Console.WriteLine("result => " + Barbarian.Attack.Roll());
                 var CurrentWeapon = Barbarian.Weapon[0];
                 Console.WriteLine("current weapon " + CurrentWeapon.ToString());
+                foreach (IAbility ability in Barbarian.Abilities.IAbilities)
+                {
+                    System.Console.WriteLine(ability.ToString() + " :: " + ability.Score);
+                }
                 if (input == ConsoleKey.F)
                 {
                     Barbarian.Weapon[0] = new Dagger();
