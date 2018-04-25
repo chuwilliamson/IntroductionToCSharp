@@ -19,7 +19,11 @@ namespace _4.Serialization.Base
         public override Action Action
 
         {
-            get { return ()=> new Dice(4).Roll(); }
+            get
+            {
+                Console.WriteLine("Wolf Attack!");
+                return ()=> new Dice(4).Roll();
+            }
         }
     }
 }

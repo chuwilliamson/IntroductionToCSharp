@@ -1,0 +1,10 @@
+{
+  "$type": "_5.StatePattern.GameContext, 5.StatePattern",
+  "ContextChanged": null,
+  "Name": "GameContext",
+  "TurnCount": 5,
+  "CurrentState": {
+    "$type": "_5.StatePattern.GameRunningState, 5.StatePattern",
+    "Name": "GameRunning"
+  }
+}
